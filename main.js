@@ -22,7 +22,7 @@ require.config({
         //'ui-bootstrap': 'bower_components/angular-ui-bootstrap/ui-bootstrap-tpls',
         'angular-mocks': 'bower_components/angular-mocks/angular-mocks',
         text: 'bower_components/requirejs-text/text',
-        'App': 'app/demo'
+        'App': 'app/app'
     },
 
     // Add angular modules that does not support AMD out of the box, put it in a shim
