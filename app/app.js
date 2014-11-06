@@ -1,7 +1,7 @@
 define(['angular',
         'app/home/module'
     ],
-    function (angular,home) {
+    function (angular) {
         var app = angular.module('MobileAngularUiExamples', [
             "ngRoute",
             "ngTouch",
