@@ -1,6 +1,7 @@
+'use strict';
 define(['angular',
-        'app/home/module','app/demo/module'
-    ],
+        'app/home/module',
+        'app/demo/module'],
     function (angular) {
         var app = angular.module('MobileAngularUiExamples', [
             "ngRoute",
@@ -10,15 +11,7 @@ define(['angular',
             "ngMui.demo"
         ]);
 
-        app.service('analytics', [
-            '$rootScope', '$window', '$location', function ($rootScope, $window, $location) {
-                var send = function (evt, data) {
-                    ga('send', evt, data);
-                }
-            }
-        ]);
-
-        app.controller('MainController', function ($rootScope, $scope, analytics) {
+        app.controller('MainController', function ($rootScope, $scope) {
 
             $rootScope.$on("$routeChangeStart", function () {
                 $rootScope.loading = true;

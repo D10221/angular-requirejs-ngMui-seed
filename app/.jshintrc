@@ -1,0 +1,9 @@
+{
+  "globalstrict": true,
+  "globals": {
+    "module": false,
+    "define":false,
+    "require":false,
+    "navigator":false
+  }
+}

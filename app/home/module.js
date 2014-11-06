@@ -1,9 +1,7 @@
-define(['angular']
-    ,function(angular){
-        var mdl =angular.module('app.home',[])
-        mdl.config(function ($routeProvider, $locationProvider) {
+'use strict';
+define(['angular'],function(angular){
+        return  angular.module('app.home',[]).config(function ($routeProvider/*, $locationProvider*/) {
             $routeProvider.when('/', {templateUrl: "app/home/home.html"});
         });
-        return mdl;
     }
 );
