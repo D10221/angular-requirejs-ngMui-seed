@@ -1,5 +1,8 @@
+'use strict';
 define(['angular'],function(angular){
+
     var mdl = angular.module('ngMui.demo',[]);
+
     mdl.config(function ($routeProvider, $locationProvider) {
         $routeProvider.when('/scroll', {templateUrl: "app/demo/scroll.html"});
         $routeProvider.when('/toggle', {templateUrl: "app/demo/toggle.html"});
@@ -22,8 +25,8 @@ define(['angular'],function(angular){
                 element[0].style["-moz-transform"] = "translate3d(" + x + "px," + y + "px," + z + "px) rotate(" + deg + "deg)";
                 element[0].style["-ms-transform"] = "translate3d(" + x + "px," + y + "px," + z + "px) rotate(" + deg + "deg)";
                 element[0].style["-o-transform"] = "translate3d(" + x + "px," + y + "px," + z + "px) rotate(" + deg + "deg)";
-                element[0].style["transform"] = "translate3d(" + x + "px," + y + "px," + z + "px) rotate(" + deg + "deg)";
-            }
+                element[0].style.transform= "translate3d(" + x + "px," + y + "px," + z + "px) rotate(" + deg + "deg)";
+            };
 
             $swipe.bind(element, {
                 start: function (coords) {
@@ -49,7 +52,7 @@ define(['angular'],function(angular){
                 },
 
                 move: function (coords) {
-                    if (startX != null) {
+                    if (startX !== null) {
                         var deltaX = coords.x - startX;
                         var deltaXRatio = deltaX / element[0].clientWidth;
                         if (deltaXRatio > 0.3) {
@@ -63,7 +66,7 @@ define(['angular'],function(angular){
                     }
                 }
             });
-        }
+        };
     });
 });
 

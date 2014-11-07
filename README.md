@@ -1,1 +1,3 @@
-..tbc
+I should've name it experiment.
+Ingredients:
+angularjs, mobile-angular-ui, requirejs,Typescript...
