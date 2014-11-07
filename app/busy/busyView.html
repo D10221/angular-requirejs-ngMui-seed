@@ -1,0 +1,31 @@
+<div content-for="title">
+    <span>Busy</span>
+</div>
+
+<div class="scrollable" ng-class="{loading: busy}">
+    <div class="scrollable-content">
+        <div class="section container">
+            <div ng-hide="busy"><h4><span> I{{busy?'':(busyDone? ' Was' :'\'m Not')}} Busy..</span></h4>
+                <a href class="btn btn-default" ng-click="toogleBusy()">{{busy ? 'Cancel' : 'Set busy' }}</a>
+                <a href class="btn btn-default" ng-click="setBusyAndWaitFor()">
+                    {{busy ? 'Cancel' : 'Long Running Task'}}</a>
+            </div>
+
+        </div>
+        <div ng-show="busy" class="app-content-loading">
+            <h4><span> Please wait while I'm {{busy?'':'Not'}} Busy...</span></h4>
+            <p ng-show="takingTooLong">is Taking too long...</p>
+            <i class="fa fa-spinner fa-spin loading-spinner"></i>
+            <a ng-show="cancelLongRunningTask && !takingTooLong"
+               href class="btn btn-default"
+               ng-click="toogleBusy(busy)">{{busy ? 'Cancel' : 'Set busy' }}</a>
+            <a ng-show="takingTooLong"
+               href class="btn btn-default"
+               ng-click="cancelLongRunningTask()"
+               >{{busy ? 'Cancel?' : 'Set busy' }}</a>
+        </div>
+    </div>
+</div>
+
+
+

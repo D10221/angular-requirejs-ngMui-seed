@@ -2,7 +2,6 @@
 /// <reference path='sideBarRouter.ts' />
 /// <reference path='SidebarCtroller' />
 
-
 define(['angular', 'app/sidebarRight/sidebarRouter', 'app/sidebarRight/SidebarCtroller','app/helpers/quickAndDirtyLogger'],
     // provide default sideBarView and Controller
     (angular, SidebarRouter, SidebarCtroller,log)=> {
