@@ -6,6 +6,7 @@ var log = function(x){ throw new Error('Not Loaded Yet')};
 class BusyCtrllr{
     static  $inject = ['$scope', '$q', '$timeout', 'busyService', 'slowThing'];
     constructor($scope, $q, $timeout, busyService, slowThing){
+
         $scope.slowThing = slowThing;
 
         $scope.takingTooLong = false;
@@ -17,6 +18,7 @@ class BusyCtrllr{
         $scope.toogleBusy = (busy)=> {
             $scope.cancelLongRunningTask = (busy)=> {
                 busyService.setBusy(busy, 1000).then(()=> {
+                    //it run at least once
                     $scope.busyDone = true;
                 });
             };
