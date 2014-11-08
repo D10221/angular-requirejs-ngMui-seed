@@ -8,14 +8,13 @@ define(['angular',
         'app/busy/module',
         'app/chat/module',
         'bower_components/underscore/underscore',
-        'bower_components/underscore.string/dist/underscore.string.min',
-        'bower_components/angular-hotkeys/build/hotkeys.min'
+        'bower_components/underscore.string/dist/underscore.string.min'
     ],
     function (angular,MainController,SidebarRouter) {
         var app = angular.module('MobileAngularUiExamples', [
             "ngRoute",
             "ngTouch",
-            "mobile-angular-ui",'cfp.hotkeys',
+            "mobile-angular-ui",
             "app.home",
             "app.sidebarRight",
             "app.busy",
