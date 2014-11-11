@@ -1,29 +1,19 @@
 /// <reference path='../../typings/tsd.d.ts' />
-define(['angular'], function (angular) {
-    var mdl = angular.module('ngMui.demo', []);
 
-    mdl.config(function ($routeProvider, $locationProvider) {
-        $routeProvider.when('/scroll', {
-            templateUrl: "app/demo/scroll.html",
-            controller: function ($scope) {
-                var scrollItems = [];
-                for (var i = 1; i <= 100; i++) {
-                    scrollItems.push("Item " + i);
-                }
-                $scope.scrollItems = scrollItems;
+define(['angular'], (angular)=> {
+    var iModule = angular.module('app.carouselDemo', []);
+
+    iModule.config(($routeProvider)=> {
+        $routeProvider.when('/carousel', {
+            templateUrl: "app/carousel/view.html",
+            controller:($scope)=>{
+                $scope.xyz = 'xyz';
             }
         });
-
-        $routeProvider.when('/toggle', { templateUrl: "app/demo/toggle.html" });
-        $routeProvider.when('/tabs', { templateUrl: "app/demo/tabs.html" });
-        $routeProvider.when('/accordion', { templateUrl: "app/demo/accordion.html" });
-        $routeProvider.when('/overlay', { templateUrl: "app/demo/overlay.html" });
-        $routeProvider.when('/forms', { templateUrl: "app/demo/forms.html" });
-        $routeProvider.when('/carousel', { templateUrl: "app/demo/carousel.html" });
     });
 
-    mdl.directive("carouselExampleItem", function ($rootScope, $swipe) {
-        return function (scope, element, attrs) {
+    iModule.directive("carouselExampleItem", function ($rootScope, $swipe) {
+        return function (scope, element/*, attrs*/) {
             var startX = null;
             var startY = null;
             var endAction = "cancel";
@@ -43,11 +33,13 @@ define(['angular'], function (angular) {
                     startX = coords.x;
                     startY = coords.y;
                 },
+
                 cancel: function (e) {
                     endAction = null;
                     translateAndRotate(0, 0, 0, 0);
                     e.stopPropagation();
                 },
+
                 end: function (coords, e) {
                     if (endAction == "prev") {
                         $rootScope.carouselPrev(carouselId);
@@ -57,6 +49,7 @@ define(['angular'], function (angular) {
                     translateAndRotate(0, 0, 0, 0);
                     e.stopPropagation();
                 },
+
                 move: function (coords) {
                     if (startX !== null) {
                         var deltaX = coords.x - startX;
@@ -74,5 +67,5 @@ define(['angular'], function (angular) {
             });
         };
     });
+    return iModule;
 });
-//# sourceMappingURL=Module.js.map
