@@ -4,6 +4,7 @@
     "module": false,
     "define":false,
     "require":false,
-    "navigator":false
+    "navigator":false,
+    "$traceurRuntime":false
   }
 }

@@ -15,7 +15,6 @@ Intentions Manifest & wishlist
  - Should be fairly straight forward to make it a  Chrome App Cordova,NodeWebKit,ect...
  - Editor/IDE/OS agnostic
  
-
 HOW?
 ----
 
@@ -52,3 +51,31 @@ Minimum names, file system based  namespace,  /app/moduleName/controller.js ,/ap
 module = angular module
 
 Routes declared per module
+
+\*.ajs, files targeted for  [traceur-compiler](https://github.com/google/traceur-compiler)
+
+**Transpilers**
+
+Why?:
+Because we can, and its fun.
+And then it could be another reasons.
+You can use 'let' with traceur, and Interfaces and generics with Typescript, why you have to chose one<sup>[*]</sup>
+
+<sub>[*]Traceur has experimental types but is not clear to me how to use it, a little obscure at the moment</sub>
+
+Yes I know it makes sense, and there is many enterprise-grade reasons to stick to one, but while prototyping you want freedom.
+Switching contexts most of the time is tedious and unproductive, but sometimes, makes you aware of limitations and/or triggers creativity
+Look at the same problem from different points of view (not that ! different), while experimenting new language features or explore things you haven't you can try different semantics to sink that pattern that didn't stick before.
+   
+  :Mechanics 
+ The idea is, a file watchers on recursively scoped directory filtered by file extension.
+ It doesn't get simpler and maintenance/tinkering free than that.
+ once source => one output, as individual scripts.
+ At the end of the day we will only care about the generated \*.js file we will require/import.
+  Setup and forget, keep the train of thought going.
+  
+   :Tools
+   Any.
+ Grunt, Gulp, Broccoli, your_favorite_task_runner_or_build_tool they all have plugins/packages to do this.
+Many IDEs do it by default Webstorm, Visual Studio.
+Many Editors like Sublime/Atom have plugins or packages to do the same.
