@@ -16,6 +16,12 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "b9b6d6b3d5b69349c014f564895cdf6d585ae09b"
+    },
+    "node/node.d.ts": {
+      "commit": "39531c32fe899cada2cc7e615610644fb6508416"
+    },
+    "minimatch/minimatch.d.ts": {
+      "commit": "39531c32fe899cada2cc7e615610644fb6508416"
     }
   }
 }
